@@ -1,6 +1,7 @@
+
 # Pipeline de Treinamento DeepLab 🧠
 
-Este repositório é baseado no código Keras disponível no site da documentação oficial do DeepLabV3+.
+Este repositório é baseado no código Keras disponível no site da documentação oficial do DeepLabV3+: https://github.com/rishizek/tensorflow-deeplab-v3-plus
 
 ## Construção do Modelo DeepLabV3+ 🛠️
 
@@ -16,13 +17,7 @@ Encontre os arquivos de instalação no diretório `scripts`.
 bash install_docker_ce.sh
 ```
 
-### 2. Instalar o runtime do Nvidia-Docker 🎮
-
-```bash
-bash install_nvidia-runtime.sh
-```
-
-### 3. Baixar o Dataset Pascal VOC 📦
+### 2. Baixar o Dataset Pascal VOC 📦
 
 Baixe o conjunto de dados Pascal VOC usando o comando abaixo:
 
@@ -30,7 +25,7 @@ Baixe o conjunto de dados Pascal VOC usando o comando abaixo:
 wget http://host.robots.ox.ac.uk/pascal/VOC/voc2012/VOCtrainval_11-May-2012.tar
 ```
 
-### 4. Extrair o Dataset e Colocar em `dataset-dir` 🗂️
+### 3. Extrair o Dataset e Colocar em `dataset-dir` 🗂️
 
 Extraia o dataset e mova para o diretório apropriado:
 
@@ -38,17 +33,16 @@ Extraia o dataset e mova para o diretório apropriado:
 tar -xvf VOCtrainval_11-May-2012.tar -C /home/thalles/DeepLab-Training-Pipeline/dataset-dir/
 ```
 
-### 5. Construir a Imagem Docker 🏗️
+### 4. Construir a Imagem Docker 🏗️
 
 Construa a imagem Docker para o ambiente de treinamento:
 
 ```bash
 docker build -t deeplab-training-pipeline /home/thalles/DeepLab-Training-Pipeline/
 ```
-![image missing](/docker_build.jpg "docker-build")
+![image missing](/2.JPG "Image")
 
-
-### 6. Configurar o Caminho do Dataset no Script `docker_run.sh` 📍
+### 5. Configurar o Caminho do Dataset no Script `docker_run.sh` 📍
 
 Edite o arquivo `docker_run.sh` para configurar o caminho do dataset:
 
@@ -64,16 +58,16 @@ DATASET_LOC=/home/thalles/DeepLab-Training-Pipeline/dataset-dir/VOCdevkit/VOC201
 
 Salve e feche o arquivo.
 
-### 7. Criar o Container com o Dataset Compartilhado 🏗️
+### 6. Criar o Container com o Dataset Compartilhado 🏗️
 
 Crie o container Docker que utilizará o dataset:
 
 ```bash
 bash /home/thalles/DeepLab-Training-Pipeline/scripts/ubuntu/docker_run.sh
 ```
-![image missing](/Tensor.jpg "DeepLabV3 Diagram")
+![image missing](/Tensor.jpg "Tensor")
 
-### 8. Executar o Treinamento 🏋️‍♂️
+### 7. Executar o Treinamento 🏋️‍♂️
 
 Dentro do container Docker, execute o script de treinamento:
 
@@ -81,29 +75,20 @@ Dentro do container Docker, execute o script de treinamento:
 bash train.sh
 ```
 
-### 9. Verificando a Execução do Container e Iniciando o Treinamento 🧑‍💻
 
-Após iniciar o container, você deve ver uma mensagem de inicialização do TensorFlow como mostrado na captura de tela. Essa mensagem indica que o ambiente está configurado corretamente e o treinamento está prestes a iniciar.
 
-⚠️ **Atenção:** Para evitar problemas com permissões de usuário, considere executar o container com seu próprio usuário. Isso evita que arquivos sejam criados com permissões que possam complicar o acesso posterior.
+![image missing](/3.JPG "Image")
 
 ```bash
-docker run -u $(id -u):$(id -g) deeplab-training-pipeline
+history
+bash /home/thalles/DeepLab-Training-Pipeline/scripts/ubuntu/docker_run.sh
 ```
 
-Depois de iniciar o container corretamente, use o comando:
-
-```bash
-bash train.sh
-```
-
-Isso irá começar o processo de treinamento do modelo DeepLabV3+ com base no dataset configurado.
 
 
 
 
-
-# DeepLab Training Pipeline
+# DeepLab Training Pipeline (Original Article)
 
 This repo is based on the Keras code available in here - https://keras.io/examples/vision/deeplabv3_plus/
 
