@@ -45,6 +45,8 @@ Construa a imagem Docker para o ambiente de treinamento:
 ```bash
 docker build -t deeplab-training-pipeline /home/thalles/DeepLab-Training-Pipeline/
 ```
+![image missing](/docker_build.jpg "docker-build")
+
 
 ### 6. Configurar o Caminho do Dataset no Script `docker_run.sh` 📍
 
@@ -69,6 +71,7 @@ Crie o container Docker que utilizará o dataset:
 ```bash
 bash /home/thalles/DeepLab-Training-Pipeline/scripts/ubuntu/docker_run.sh
 ```
+![image missing](/Tensor.jpg "DeepLabV3 Diagram")
 
 ### 8. Executar o Treinamento 🏋️‍♂️
 
@@ -110,7 +113,7 @@ DeepLabv3+ extends DeepLabv3 by adding an encoder-decoder structure. The encoder
 information by applying dilated convolution at multiple scales, while the decoder module refines the segmentation
 results along object boundaries.
 
-![image missing](assets/deeplabv3_plus_diagram.png "DeepLabV3 Diagram")
+![image missing](/deeplabv3_plus_diagram.png "DeepLabV3 Diagram")
 
 ## Installation
 
