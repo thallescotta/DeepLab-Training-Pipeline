@@ -1,7 +1,13 @@
-
 # Pipeline de Treinamento DeepLab 🧠
 
-Este repositório é baseado no código Keras disponível no site da documentação oficial do DeepLabV3+: https://github.com/rishizek/tensorflow-deeplab-v3-plus
+Este repositório é baseado no código Keras disponível no site da documentação oficial do DeepLabV3+: 
+
+https://github.com/rishizek/tensorflow-deeplab-v3-plus
+
+https://keras.io/examples/vision/deeplabv3_plus/
+
+https://github.com/thallescotta/DeepLab-Training-Pipeline/blob/main/Multi%E2%80%90class-segmentation-of-temporomandibular-joint-using-ensemble-deep-learning.pdf
+
 
 ## Construção do Modelo DeepLabV3+ 🛠️
 
